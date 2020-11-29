@@ -192,6 +192,13 @@
     }
 
     $("#skill-all").addClass("d-none");
+
+    // Animation effect
+    $('.hexagon').removeClass('aos-animate');
+    setTimeout(function() {
+        $('.hexagon').addClass('aos-animate');
+    });
+
   });
 
   // Skills nav back 
@@ -206,6 +213,12 @@
         $(skillListId).addClass("d-none");
       }
     }
+
+    // Animation effect
+    $('.hexagon').removeClass('aos-animate');
+    setTimeout(function() {
+        $('.hexagon').addClass('aos-animate');
+    });
   });
 
 })(jQuery);
