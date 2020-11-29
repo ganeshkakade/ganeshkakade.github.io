@@ -1186,3 +1186,7 @@ section {
   color: #fff;
   background: #0563bb;
 }
+/* hexagon content font fix */
+.hexagontent {
+  font-size: 14px !important;
+}
