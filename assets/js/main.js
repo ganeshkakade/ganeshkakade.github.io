@@ -24,7 +24,7 @@
   }
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on('click', '.nav-menu a, .scrollto', function(e) {
+  $(document).on('click', '.nav-menu a, .skill-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
@@ -180,6 +180,32 @@
     dots: true,
     loop: true,
     items: 1
+  });
+
+  // Skills hexagon cells
+  $('.hexagon').click(function() {
+    $(".skill-nav").removeClass("d-none");
+
+    var skillListId = "#" + $(this).attr('id') + "-list";
+    if($(skillListId).hasClass("d-none")) {
+      $(skillListId).removeClass("d-none");
+    }
+
+    $("#skill-all").addClass("d-none");
+  });
+
+  // Skills nav back 
+  $('.skill-nav').click(function() {
+    $("#skill-all").removeClass("d-none");
+
+    $(".skill-nav").addClass("d-none");
+
+    for(var i=1; i<=8; i++) {
+      var skillListId = "#skill-" + i + "-list";
+      if(!$(skillListId).hasClass("d-none")) {
+        $(skillListId).addClass("d-none");
+      }
+    }
   });
 
 })(jQuery);
